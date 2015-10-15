@@ -4,12 +4,19 @@ public class manualbroker implements Runnable{
 
 	private int brokerID;
 
-	public void createBroker(int id){
+	public manualbroker createBroker(int id){
 		this.brokerID = id;
+		return this;
+	}
+
+	private int getBrokerID(){
+		return this.brokerID;
 	}
 
 	public void run(){
-		try{
+
+		//PROBLEM: HOW CAN I MAKE AIRPLANE ACCESSIBLE TO ALL THREADS?
+		/*try{
 		//should i make this a broker interface instead?
 		//advantages of making a broker interface:
 			//1. the run methods are not all the same and they don't have to be
@@ -27,7 +34,7 @@ public class manualbroker implements Runnable{
 
 		} catch(InterruptedException exception){
 			System.out.println("Something went wrong.");
-		}
+		}*/
 
 
 	}

@@ -4,12 +4,17 @@ public class automaticbroker implements Runnable{
 
 	private int brokerID;
 
-	public void createBroker(int id){
+	public automaticbroker createBroker(int id){
 		this.brokerID = id;
+		return this;
+	}
+
+	private int getBrokerID(){
+		return this.brokerID;
 	}
 
 	public void run(){
-		try{
+		/*try{
 
 		//search for a seat
 		//no delay? because we don't want other threads to get in
@@ -18,7 +23,7 @@ public class automaticbroker implements Runnable{
 
 		} catch(InterruptedException exception){
 			System.out.println("Something went wrong.");
-		}
+		}*/
 
 
 	}
