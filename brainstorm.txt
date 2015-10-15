@@ -1,0 +1,10 @@
+3 classes
+1 class airplane - main class
+1 class automatic broker - thread
+1 class manual broker - thread
+
+interface with broker
+
+make gui in the airplane
+make action listener to do things from the airplane class
+have it interact with the threads when buttons are pressed
