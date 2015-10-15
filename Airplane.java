@@ -19,19 +19,42 @@ public class Airplane extends JFrame{
 	}*/
 
 	private boolean findSeat(int colNum, int rowNum){
+		//returns true is seat is empty, false if full
 		if(this.seating[colNum][rowNum] == 0){
 			//seat is empty
 			return true;
 		} else return false;
 	}
 
+	public boolean isFull(){
+
+		int c = this.numberOfColumns;
+		int r = this.numberOfRows
+
+		for(int x = 0; x < c; x++){
+			for(int y= 0; y < r; y++){
+				if(this.airplane[r][c] == 0){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public void setSeat(int colNum, int rowNum, int id){
+
+		if(this.findSeat(colNum, rowNum)){
+			this.seating[rowNum][colNum] = id;
+		}
+	}
+
 	public static void main(String[] args){
 
 		//instantiate airlane, runnables, threads
 		Airplane airplane = new Airplane();
-		Runnable br1 = new automaticbroker(1);
-		Runnable br2 = new automaticbroker(2);
-		Runnable br3 = new manualbroker(3);
+		Runnable br1 = new automaticbroker().createBroker(1, airplane);
+		Runnable br2 = new automaticbroker().createBroker(2, airplane);
+		Runnable br3 = new manualbroker().createBroker(3, airplane);
 		Thread tbr1 = new Thread(br1);
 		Thread tbr2 = new Thread(br2);
 		Thread tbr3 = new Thread(br3);

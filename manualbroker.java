@@ -1,11 +1,14 @@
 import java.lang.*;
+import java.util.*;
 
 public class manualbroker implements Runnable{
 
 	private int brokerID;
+	private Airplane airplane;
 
-	public manualbroker createBroker(int id){
+	public manualbroker createBroker(int id, Airplane airplane){
 		this.brokerID = id;
+		this.airplane = airplane;
 		return this;
 	}
 
