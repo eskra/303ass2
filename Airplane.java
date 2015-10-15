@@ -27,6 +27,7 @@ public class Airplane extends JFrame{
 
 	public static void main(String[] args){
 
+		//instantiate airlane, runnables, threads
 		Airplane airplane = new Airplane();
 		Runnable br1 = new automaticbroker(1);
 		Runnable br2 = new automaticbroker(2);
@@ -34,8 +35,6 @@ public class Airplane extends JFrame{
 		Thread tbr1 = new Thread(br1);
 		Thread tbr2 = new Thread(br2);
 		Thread tbr3 = new Thread(br3);
-		
-		System.out.println(airplane.numberOfRows + airplane.numberOfColumns);
 
 		/*automaticbroker broker1 = (new automaticbroker()).createBroker(1);
 		automaticbroker broker2 = (new automaticbroker()).createBroker(2);
@@ -47,29 +46,47 @@ public class Airplane extends JFrame{
 
 		JLabel greeting = new JLabel("Select which broker you would like to reserve with.");
 
+		//for organization
 		JPanel automaticpanel = new JPanel();
 		JPanel manualpanel = new JPanel();
+
+		//create buttons and window layout
 		JButton broker1button = new JButton("Reserve Using Automatic Broker 1");
 		JButton broker2button = new JButton("Reserve Using Automatic Broker 2");
 		JButton broker3button = new JButton("Reserve");
+
 		automaticpanel.add(broker1button);
 		automaticpanel.add(broker2button);
 		manualpanel.add(new JLabel("Reserve Using Manual Broker"));
-		//manualpanel.add(new JLabel("Please enter your preferred seat location as column, row."));
-
 		manualpanel.add(broker3button);
 
 		frame.setLayout(new FlowLayout());
 		frame.add(greeting);
 		frame.add(automaticpanel);
 		frame.add(manualpanel);
-		frame.add(new JTextField(20));
+		//frame.add(new JTextField(20));
 		frame.add(broker3button);
 		//fix layout stuff so that it doesnt move when resizing
 
+		//finalize frame and display
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
+
+		//IMPLEMENT BUTTONS ACTIONS
+
+		broker1button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				tbr1.start();
+				//TODO: IMPLEMENT LOCKING ??
+			}
+		});
+
+		broker2button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				tbr2.start();
+			}
+		});
 
 		//IMPLEMENT CLICKING OF MANUAL RESERVATION
 		//TODO: MAKE THE MENU REAPPEAR? 
@@ -87,6 +104,8 @@ public class Airplane extends JFrame{
 						button.addActionListener(new ActionListener(){
 
 							public void actionPerformed(ActionEvent event){
+
+								tbr1.start();
 
 								//ALL ACTIONS SHOULD BE DONE IN THE THREADS CLASS
 								
@@ -117,10 +136,5 @@ public class Airplane extends JFrame{
 			}
 
 		});
-
-
-
-
 	}
-
 }
