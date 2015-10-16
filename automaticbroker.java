@@ -5,10 +5,12 @@ public class automaticbroker implements Runnable{
 
 	private int brokerID;
 	private Airplane airplane;
+	private boolean running;
 
 	public automaticbroker createBroker(int id, Airplane airplane){
 		this.brokerID = id;
 		this.airplane = airplane;
+		this.running = false;
 		return this;
 	}
 
@@ -16,10 +18,17 @@ public class automaticbroker implements Runnable{
 		return this.brokerID;
 	}
 
+	public void terminate(){
+		this.running = false;
+	}
+
 	public void run(){
 		try{
 
-			while(!airplane.isFull()){
+			this.running = true;
+
+			while(running){
+			//while(!airplane.isFull()){
 				//range for column is [0,4[
 				//range for row is [0,50[
 
@@ -30,25 +39,14 @@ public class automaticbroker implements Runnable{
 				if(airplane.findSeat(randomrow, randomcolumn)){
 					//sets the seat as taken by that broker
 					airplane.setSeat(randomrow, randomcolumn, this.brokerID);
+					System.out.println(airplane.getSeatID(randomrow, randomcolumn));
 				}
 				Thread.sleep(900);
+				this.terminate();
+
 			}
 		} catch (InterruptedException exception){
 			System.out.println("Something went wrong.");
 		}
 	}
-
-		//for a random ints, between 0 and 50 and between 0 and 4, 
-		//randomly reserve seats if it isnt already
-		/*try{
-
-		//search for a seat
-		//no delay? because we don't want other threads to get in
-		//we will lock the thread in the airplane class
-		//we will also make sure to check that not all seats are taken (int?)
-
-		} catch(InterruptedException exception){
-			System.out.println("Something went wrong.");
-		}*/
-
 }

@@ -21,6 +21,10 @@ public class Airplane extends JFrame{
 		return this.seating;
 	}
 
+	public int getSeatID(int rowNum, int colNum){
+		return this.seating[rowNum][colNum];
+	}
+
 	public boolean findSeat(int rowNum, int colNum){
 		//returns true is seat is empty, false if full
 		if(this.seating[rowNum][colNum] == 0){
