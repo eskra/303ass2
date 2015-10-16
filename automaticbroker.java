@@ -36,10 +36,15 @@ public class automaticbroker implements Runnable{
 				int randomcolumn = ((new Random()).nextInt(4));
 				System.out.println(randomrow);
 				System.out.println(randomcolumn);
+
+				//if seat is not already taken
 				if(airplane.findSeat(randomrow, randomcolumn)){
-					//sets the seat as taken by that broker
-					airplane.setSeat(randomrow, randomcolumn, this.brokerID);
-					System.out.println(airplane.getSeatID(randomrow, randomcolumn));
+					//if the chosen ints are valid
+					if(randomrow >= 0 && randomrow < 50 && randomcolumn >= 0 && randomcolumn < 4){
+						//sets the seat as taken by that broker
+						airplane.setSeat(randomrow, randomcolumn, this.brokerID);
+						System.out.println(airplane.getSeatID(randomrow, randomcolumn));
+					}
 				}
 				Thread.sleep(900);
 				this.terminate();

@@ -13,9 +13,6 @@ public class appWindow extends JFrame{
 		frame.setTitle("Airplane Reservation System");
 		frame.setPreferredSize(new Dimension(500,500));
 
-		//JLabel greeting = new JLabel("Automatic brokers are currently running.");
-		//JLabel greeting = new JLabel("Select which broker you would like to reserve with.");
-
 		//for organization
 		JPanel automaticpanel = new JPanel();
 		JPanel manualpanel = new JPanel();
@@ -23,30 +20,19 @@ public class appWindow extends JFrame{
 
 		//create buttons and window layout
 		JButton autobrbutton = new JButton("Reserve using automatic broker");
-		//JButton broker1button = new JButton("Reserve Using Automatic Broker 1");
-		//JButton broker2button = new JButton("Reserve Using Automatic Broker 2");
 		JButton manualbrbutton = new JButton("Reserve");
-
 		JButton viewairplane = new JButton("View Airplane Seating");
 
-		//automaticpanel.add(broker1button);
-		//automaticpanel.add(broker2button);
 		automaticpanel.add(autobrbutton);
 		manualpanel.add(new JLabel("Reserve Using Manual Broker"));
 		manualpanel.add(manualbrbutton);
 		viewplane.add(new JLabel("If you would like to View the Airplane..."));
 		viewplane.add(viewairplane);
 
-
-
 		frame.setLayout(new FlowLayout());
-		//frame.add(greeting);
 		frame.add(automaticpanel);
 		frame.add(manualpanel);
 		frame.add(viewplane);
-		//frame.add(new JTextField(20));
-		//frame.add(broker3button);
-		//fix layout stuff so that it doesnt move when resizing
 
 		//finalize frame and display
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,13 +69,6 @@ public class appWindow extends JFrame{
 			}
 		});
 
-		/*broker2button.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				tbr2.start();
-			}
-		});*/
-
-
 		//IMPLEMENT CLICKING OF MANUAL RESERVATION
 		//TODO: MAKE THE MENU REAPPEAR? 
 		//MAKE SURE WE DONT LOSE DATA
@@ -111,25 +90,10 @@ public class appWindow extends JFrame{
 						else{
 							button.setText(Integer.toString(airplane.getSeating()[rows][columns]));
 						}
-						//JButton button = new JButton(Integer.toString(airplane.getSeating()[rows][columns]));
-							button.addActionListener(new ActionListener(){
+						button.addActionListener(new ActionListener(){
 
-								public void actionPerformed(ActionEvent event){
-									//System.out.println(button.getText());
-
-
-
-								//tbr1.start();
-
-								//ALL ACTIONS SHOULD BE DONE IN THE THREADS CLASS
-								
-								/*if(button.getText().equals("0")){
-									button.setText("3");
-								}
-								else{
-									//do nothing because seat is reserved
-								}
-								frame.setVisible(true);*/
+							public void actionPerformed(ActionEvent event){
+								//System.out.println(button.getText());
 							}
 						});
 						panel.add(button);
@@ -140,87 +104,11 @@ public class appWindow extends JFrame{
 
 				manualreservation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				manualreservation.add(jsp);
-				//manualreservation.add(panel);
 				manualreservation.pack();
 				manualreservation.setVisible(true);
-				/*frame.add(new JLabel("Please enter your preferred seat location as column, row."));
-				frame.add(new JTextField(20));
-				JButton reserve = new JButton("Reserve");
-				frame.pack();
-				frame.setVisible(true);*/
-				//on click, we need to reserve a seat
-				//aka we need to run the threads
 			}
 		});
 	}
-
-	
-		/*JFrame frame = new JFrame();
-		frame.setPreferredSize(new Dimension(500,500));
-
-		JLabel greeting = new JLabel("Select which broker you would like to reserve with.");
-
-		JPanel automaticpanel = new JPanel();
-		JPanel manualpanel = new JPanel();
-		JButton broker1 = new JButton("Reserve Using Automatic Broker 1");
-		JButton broker2 = new JButton("Reserve Using Automatic Broker 2");
-		JButton broker3 = new JButton("Reserve");
-		automaticpanel.add(broker1);
-		automaticpanel.add(broker2);
-		manualpanel.add(new JLabel("Reserve Using Manual Broker"));
-		//manualpanel.add(new JLabel("Please enter your preferred seat location as column, row."));
-
-		manualpanel.add(broker3);
-
-		frame.setLayout(new FlowLayout());
-		frame.add(greeting);
-		frame.add(automaticpanel);
-		frame.add(manualpanel);
-		frame.add(new JTextField(20));
-		frame.add(broker3);
-		//fix layout stuff so that it doesnt move when resizing
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setVisible(true);
-
-		broker3.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-
-				JFrame manualreservation = new JFrame();
-				manualreservation.setPreferredSize(new Dimension(800,800));
-				JPanel panel = new JPanel(new GridLayout(4,50));
-
-				for(int columns = 0; columns < 4; columns++){
-					for(int rows = 0; rows < 50; rows++){
-						final JButton button = new JButton(String.parseInt(airplane.seating[columns][rows]));
-						button.addActionListener(new ActionListener(){
-
-							public void actionPerformed(ActionEvent event){
-								if(button.getText() == 0){
-									button.setText("3");
-								}
-								else{
-									//do nothing because seat is reserved
-								}
-							}
-						});
-						panel.add(button);
-					}
-				}
-
-				manualreservation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				manualreservation.add(panel);
-				manualreservation.pack();
-				manualreservation.setVisible(true);
-				/*frame.add(new JLabel("Please enter your preferred seat location as column, row."));
-				frame.add(new JTextField(20));
-				JButton reserve = new JButton("Reserve");
-				frame.pack();
-				frame.setVisible(true);*/
-				//on click, we need to reserve a seat
-				//aka we need to run the threads
-
 
 	public static void main(String[] args){
 		//appWindow w = create(airplane);
