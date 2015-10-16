@@ -17,10 +17,13 @@ public class Airplane extends JFrame{
 		this.numberOfRows = rowNum;
 		this.seating = new int[colNum][rowNum];
 	}*/
+	public int[][] getSeating(){
+		return this.seating;
+	}
 
-	private boolean findSeat(int colNum, int rowNum){
+	public boolean findSeat(int rowNum, int colNum){
 		//returns true is seat is empty, false if full
-		if(this.seating[colNum][rowNum] == 0){
+		if(this.seating[rowNum][colNum] == 0){
 			//seat is empty
 			return true;
 		} else return false;
@@ -29,11 +32,11 @@ public class Airplane extends JFrame{
 	public boolean isFull(){
 
 		int c = this.numberOfColumns;
-		int r = this.numberOfRows
+		int r = this.numberOfRows;
 
 		for(int x = 0; x < c; x++){
 			for(int y= 0; y < r; y++){
-				if(this.airplane[r][c] == 0){
+				if(this.seating[y][x] == 0){
 					return false;
 				}
 			}
@@ -41,45 +44,54 @@ public class Airplane extends JFrame{
 		return true;
 	}
 
-	public void setSeat(int colNum, int rowNum, int id){
+	public void setSeat(int rowNum, int colNum, int id){
 
-		if(this.findSeat(colNum, rowNum)){
+		if(this.findSeat(rowNum, colNum)){
 			this.seating[rowNum][colNum] = id;
 		}
 	}
 
 	public static void main(String[] args){
 
+		//appWindow w = new appWindow(airplane);
 		//instantiate airlane, runnables, threads
 		Airplane airplane = new Airplane();
-		Runnable br1 = new automaticbroker().createBroker(1, airplane);
+
+		//appWindow w = new appWindow();
+		appWindow w = new appWindow(airplane);
+		//w.create(airplane);
+		/*Runnable br1 = new automaticbroker().createBroker(1, airplane);
 		Runnable br2 = new automaticbroker().createBroker(2, airplane);
 		Runnable br3 = new manualbroker().createBroker(3, airplane);
 		Thread tbr1 = new Thread(br1);
 		Thread tbr2 = new Thread(br2);
 		Thread tbr3 = new Thread(br3);
+		*/
+		//AppWindow(airplane);
 
 		/*automaticbroker broker1 = (new automaticbroker()).createBroker(1);
 		automaticbroker broker2 = (new automaticbroker()).createBroker(2);
 		manualbroker broker3 = (new manualbroker()).createBroker(3);
 		*/
 		
-		JFrame frame = new JFrame();
+		/*JFrame frame = new JFrame();
 		frame.setPreferredSize(new Dimension(500,500));
 
-		JLabel greeting = new JLabel("Select which broker you would like to reserve with.");
+		JLabel greeting = new JLabel("Automatic brokers are currently running.");
+		//JLabel greeting = new JLabel("Select which broker you would like to reserve with.");
 
 		//for organization
 		JPanel automaticpanel = new JPanel();
 		JPanel manualpanel = new JPanel();
 
 		//create buttons and window layout
-		JButton broker1button = new JButton("Reserve Using Automatic Broker 1");
-		JButton broker2button = new JButton("Reserve Using Automatic Broker 2");
+		//JButton broker1button = new JButton("Reserve Using Automatic Broker 1");
+		//JButton broker2button = new JButton("Reserve Using Automatic Broker 2");
 		JButton broker3button = new JButton("Reserve");
 
-		automaticpanel.add(broker1button);
-		automaticpanel.add(broker2button);
+		//automaticpanel.add(broker1button);
+		//automaticpanel.add(broker2button);
+		manualpanel.add(new JLabel("If you would like to View the Airplane..."));
 		manualpanel.add(new JLabel("Reserve Using Manual Broker"));
 		manualpanel.add(broker3button);
 
@@ -95,10 +107,14 @@ public class Airplane extends JFrame{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
-
+		
 		//IMPLEMENT BUTTONS ACTIONS
 
-		broker1button.addActionListener(new ActionListener(){
+		//FOR NOW COMMENT OUT AUTOMATIC BROKER BUTTONS
+		//THE POINT OF THIS WHOLE THING IS THAT THE AUTOMATIC 
+		//BROKERS ARE LOOKING ALWAYS FOR SEATS
+
+		/*broker1button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				tbr1.start();
 				//TODO: IMPLEMENT LOCKING ??
@@ -109,12 +125,12 @@ public class Airplane extends JFrame{
 			public void actionPerformed(ActionEvent event){
 				tbr2.start();
 			}
-		});
+		});*/
 
 		//IMPLEMENT CLICKING OF MANUAL RESERVATION
 		//TODO: MAKE THE MENU REAPPEAR? 
 		//MAKE SURE WE DONT LOSE DATA
-		broker3button.addActionListener(new ActionListener(){
+		/*broker3button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 
 				JFrame manualreservation = new JFrame();
@@ -139,7 +155,7 @@ public class Airplane extends JFrame{
 									//do nothing because seat is reserved
 								}
 								frame.setVisible(true);*/
-							}
+							/*}
 						});
 						panel.add(button);
 					}
@@ -156,8 +172,8 @@ public class Airplane extends JFrame{
 				frame.setVisible(true);*/
 				//on click, we need to reserve a seat
 				//aka we need to run the threads
-			}
+			/*}
 
-		});
+		});*/
 	}
 }
