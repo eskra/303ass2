@@ -6,11 +6,11 @@ problem. I have left the files there for anyone to look at, but they are incorre
 
 The relevant files for the completed program are:
 
-Airplane.java\n
-Airplane$1.class\n
-Automaticbroker.java\n
-Automaticbroker.class\n
-Manualbr.java\n
-Manualbr$1.class\n
+Airplane.java <br />
+Airplane$1.class <br />
+Automaticbroker.java <br />
+Automaticbroker.class <br />
+Manualbr.java <br />
+Manualbr$1.class <br />
 
 The remaining new files are from the generation of javadocs for this assignment. 
