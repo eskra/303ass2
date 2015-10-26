@@ -8,3 +8,11 @@ interface with broker
 make gui in the airplane
 make action listener to do things from the airplane class
 have it interact with the threads when buttons are pressed
+
+As of Oct 16; THINGS TO DO:
+	- decide how threads will stop
+	- implement locking
+	- will threads begin when the applicaton begins?
+	- how will we select which seat to choose between the seat
+		provided by broker 1 and broker 2
+	- 

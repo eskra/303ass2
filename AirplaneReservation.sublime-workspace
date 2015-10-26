@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"set",
+				"setbuttonpressed"
+			],
+			[
+				"create",
+				"createBroker"
+			],
+			[
+				"Action",
+				"ActionListener"
+			],
+			[
+				"random",
+				"randomcolumn"
+			],
+			[
+				"get",
+				"getSeating"
+			],
+			[
+				"vi",
+				"viewplane"
+			],
+			[
+				"man",
+				"manualbrbutton"
+			],
+			[
+				"view",
+				"viewairplane"
+			],
+			[
+				"numb",
+				"numberOfRows"
+			],
+			[
+				"number",
+				"numberOfColumns"
+			],
+			[
+				"cre",
+				"createBroker"
+			],
+			[
+				"add",
+				"addActionListener"
+			],
+			[
+				"row",
+				"rowSeatCount"
+			],
+			[
 				"Not",
 				"NotImplemented"
 			],
@@ -23,6 +75,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/Eskra/Desktop/Mcgill/newer/appWindow.java",
+			"settings":
+			{
+				"buffer_size": 4209,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Eskra/Desktop/Mcgill/newer/Autobroker.java",
+			"settings":
+			{
+				"buffer_size": 1308,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Manualbroker.java",
+			"settings":
+			{
+				"buffer_size": 2580,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Eskra/Desktop/Mcgill/newer/Airplane.java",
+			"settings":
+			{
+				"buffer_size": 1319,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -48,6 +132,10 @@
 	},
 	"file_history":
 	[
+		"/Users/Eskra/Desktop/Mcgill/COMP 303/ass2again/Automaticbroker.java",
+		"/Users/Eskra/Desktop/Mcgill/COMP 303/Ass2/brainstorm.txt",
+		"/Users/Eskra/Desktop/Mcgill/COMP 303/Ass2/broker.java",
+		"/Users/Eskra/Desktop/Mcgill/COMP 303/Ass2/FrameTester.java",
 		"/Users/Eskra/Desktop/Mcgill/COMP 302/Midterm Study/datatypes/trees.ml",
 		"/Users/Eskra/Desktop/Mcgill/COMP 302/Midterm Study/datatypes/lists.ml",
 		"/Users/Eskra/Downloads/hw1_solutions/hw1.ml",
@@ -105,8 +193,118 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/Eskra/Desktop/Mcgill/newer/appWindow.java",
+					"settings":
+					{
+						"buffer_size": 4209,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1537,
+								1537
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 392.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Eskra/Desktop/Mcgill/newer/Autobroker.java",
+					"settings":
+					{
+						"buffer_size": 1308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								548,
+								548
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 118.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Manualbroker.java",
+					"settings":
+					{
+						"buffer_size": 2580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								742,
+								742
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Eskra/Desktop/Mcgill/newer/Airplane.java",
+					"settings":
+					{
+						"buffer_size": 1319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								461,
+								461
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
